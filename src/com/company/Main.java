@@ -25,11 +25,11 @@ public class Main {
     //    System.out.println("Destination date/time/zone: " + datetimeFormatter.format(destinationZoneDateTime));
 
         Duration duration = Duration.between(departureZoneDateTime, destinationZoneDateTime);
-        long days = duration.toDays();
-        long hours = duration.minusDays(days).toHours();
-        long min = duration.minusHours(days * 24 + hours).toMinutes();
+        var days = duration.toDaysPart();
+        var hours = duration.toHoursPart();
+        var minutes = duration.toMinutesPart();
     //    System.out.println("Duration of your flight: " + duration.toHours() + " hours");
-        System.out.println("Duration of your flight: " + days + " days " + hours + " hours " + min + " minutes");
+        System.out.println("Duration of your flight: " + days + " days " + hours + " hours " + minutes + " minutes");
 
     }
 }
